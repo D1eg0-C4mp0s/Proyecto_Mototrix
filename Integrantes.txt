@@ -4,4 +4,4 @@ Estiven --- analista alias "el unico que trabaja"
 Rodis --- analista alias "el que apoya al Junior" (eso supongo?)
 JuanDa --- proyect owner alias "el que no se queja, esta de acuerdo con todo" (hum, sospechoso)
 
-Equipo 1
+Equipo 1 Gestion Mototrix
