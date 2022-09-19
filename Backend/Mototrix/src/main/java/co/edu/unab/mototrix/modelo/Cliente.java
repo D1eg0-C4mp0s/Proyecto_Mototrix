@@ -3,12 +3,12 @@ package co.edu.unab.mototrix.modelo;
 
 
 public class Cliente {
-    private String idCliente;
+    private int idCliente;
     private String nombre;
     private String telefono;
     private String correo;
 
-    public Cliente(String idCliente, String nombre, String telefono, String correo) {
+    public Cliente(int idCliente, String nombre, String telefono, String correo) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -23,11 +23,11 @@ public class Cliente {
         this.correo = correo;
     }
 
-    public String getIdCliente() {
+    public int getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(String idCliente) {
+    public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
 
