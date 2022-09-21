@@ -67,9 +67,8 @@ public class CServicios {
         public static void editarServicio(int idServicios, String nombre_serv, Short tiene_insumos, Short tiene_refaciones){
         
         try {
-            Servicios e = new Servicios(idServicios, nombre_serv, tiene_insumos, tiene_refaciones);
             Statement st = Conexion.getConect().createStatement();
-            st.execute("update servicios set nombre = '"+e.getNombre_serv()+"', tiene_insumos = '"+e.getTiene_insumos()+"', tiene_refacciones = '"+e.getTiene_refaciones()+"'");
+            st.execute("update servicios set nombre = '"+nombre_serv+"', tiene_insumos = '"+tiene_insumos+"', tiene_refacciones = '"+tiene_refaciones+"'where idServicios = '"+idServicios+"'");
             JOptionPane.showMessageDialog(null, "Servicio Actualizado");
             
         } catch (SQLException ex) {

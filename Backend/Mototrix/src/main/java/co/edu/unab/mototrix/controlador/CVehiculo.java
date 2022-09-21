@@ -68,11 +68,11 @@ public class CVehiculo {
         
         try {
             Statement st = Conexion.getConect().createStatement();
-            st.execute("update vehiculo set marca = '"+marca+"', kilometros_rec = '"+kilometros_rec+"', estados = '"+estado+"' where idVehiculo = '"+idVehiculos+"' ");
+            st.execute("update vehiculo set marca = '"+marca+"', kilometros_rec = '"+kilometros_rec+"', estados = '"+estado+"' where idVehiculo = '"+idVehiculos+"' where idVehiculo = '"+idVehiculos+"' ");
             JOptionPane.showMessageDialog(null, "Vehiculo Actualizado");
             
         } catch (SQLException ex) {
-            Logger.getLogger(CEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CVehiculo.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Vehiculo no actualizado");
             
         }
