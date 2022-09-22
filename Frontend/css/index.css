@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+/* style de formulario de ingreso*/
 .contenedor{
   background: rgb(148, 142, 142);
   display: flex;
@@ -44,5 +45,52 @@
   outline: none;
   background: rgb(148, 142, 142) ;
   color: white;
-  margin-left: 80px;
+  
+}
+/* formulario empleado*/
+.re{
+  background: orange;
+  display: flex;
+  width: 600px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+.re form h2{
+  font-size: 30px;
+  text-align: left;
+  margin-bottom: 0px;
+}
+.re form input{
+  width: 100%;
+  padding: 10px 40px;
+  margin-top: 30px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 15px;
+  outline: none;
+ 
+}
+.re form select{
+  width: 100%;
+  padding: 10px 40px;
+  margin-top: 30px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 15px;
+  outline: none;
+}
+.center{
+  text-align: center;
+}
+.re form button{
+  padding: 10px 40px;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: rgb(148, 142, 142) ;
+  color: white;
+  
 }
