@@ -25,7 +25,7 @@ public class CCliente {
             JOptionPane.showMessageDialog(null, "¡¡Cliente registrado!!");
             
         } catch (SQLException ex) {
-            Logger.getLogger(CEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CCliente.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "!!Cliente no Registrado¡¡¡");
         }
     }
@@ -40,7 +40,7 @@ public class CCliente {
             JOptionPane.showMessageDialog(null, "Cliente Eliminado");
             
         } catch (SQLException ex) {
-            Logger.getLogger(CEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CCliente.class.getName()).log(Level.SEVERE, null, ex);
             
             JOptionPane.showMessageDialog(null, "No se pudo eliminar el Cliente, puede que no exista");
         }
@@ -58,7 +58,7 @@ public class CCliente {
             JOptionPane.showMessageDialog(null, "¡¡Cliente acualizado!!");
             
         } catch (SQLException ex) {
-            Logger.getLogger(CEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CCliente.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "!!Cliente no actualizado¡¡");
         }
     }
@@ -72,7 +72,7 @@ public class CCliente {
             rs = st.executeQuery("select * from cliente where idCliente = '"+id+"' ");
             
         } catch (SQLException ex) {
-            Logger.getLogger(CEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     return rs;
@@ -85,7 +85,7 @@ public class CCliente {
             Statement st = Conexion.getConect().createStatement();
             rs = st.executeQuery("select * from cliente");
         } catch (SQLException ex) {
-            Logger.getLogger(CEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rs;
     }
@@ -101,14 +101,14 @@ public class CCliente {
         try {
             while(rs.next()){
                 
-                String[]fila = {rs.getString("idCliente"), rs.getString("nombre"), rs.getString("telefono"), rs.getString("correo")};
+                String[]fila = {rs.getString("idServicios"), rs.getString("nombre"), rs.getString("tiene_insumos"), rs.getString("tiene_refaciones")};
                 modelo.addRow(fila);
             }
             
             tabla.setModel(modelo);
             
         } catch (SQLException ex) {
-            Logger.getLogger(CEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CServicios.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

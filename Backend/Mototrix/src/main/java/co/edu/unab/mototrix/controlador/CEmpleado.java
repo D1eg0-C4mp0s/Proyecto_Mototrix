@@ -67,9 +67,9 @@ public class CEmpleado {
         public static void editarEmpleado(int idEmpleado, String nombre, String telefono, String tipo, double salario){
         
         try {
-            Empleado e = new Empleado(idEmpleado, nombre, telefono, tipo, salario);
+            
             Statement st = Conexion.getConect().createStatement();
-            st.execute("update empleado set nombre = '"+nombre+"', telefono = '"+telefono+"', tipo = '"+tipo+"', salario = '"+salario+"'");
+            st.execute("update empleado set nombre = '"+nombre+"', telefono = '"+telefono+"', tipo = '"+tipo+"', salario = '"+salario+"' where idEmpleado = '"+idEmpleado+"'");
             JOptionPane.showMessageDialog(null, "Empleado Actualizado");
             
         } catch (SQLException ex) {

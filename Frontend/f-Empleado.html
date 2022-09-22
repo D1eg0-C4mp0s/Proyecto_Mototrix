@@ -5,21 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>formulario empleado</title>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <div class="registrar">
-    <form action="" class="formulario--registro">
+  <!--re: registar empleado-->
+  <div class="re">
+    
+    <form action="" >
       <h2>Registrar Empleado</h2>
       <input type="text" placeholder="CC" required>
       <input type="text" placeholder="Nombre" required>
       <input type="text" placeholder="Telefono" required>
-      <label>Cargo</label>
       <select>
-        <option value="0" ></option>
-        <option value="1">Mecanico</option>
+        <option value="0" >Cargo</option>
+        <option value="1" >Mecanico</option>
         <option value="2">Cajero</option>
       <input type="text" placeholder="Salario" required>
-      <button>Registrar</button>
+      <div class="center">
+        <button>Registrar</button>
+      </div>
+      
     </form>
   </div>
 </body>
