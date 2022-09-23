@@ -32,8 +32,10 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Vehiculos` (
   `idVehiculos` INT NOT NULL,
   `marca` VARCHAR(45) NOT NULL,
-  `kilometros_rec` INT NOT NULL,
+  `referencia` VARCHAR(45) NOT NULL,
+  `modelo` INT NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
+  `kilometros_rec` INT NOT NULL,
   PRIMARY KEY (`idVehiculos`))
 ENGINE = InnoDB;
 
