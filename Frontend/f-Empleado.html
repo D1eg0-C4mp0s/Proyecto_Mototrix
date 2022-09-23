@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>formulario empleado</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Registro de Empleado</title>
 </head>
 <body>
-  <!--re: registar empleado-->
-  <div class="re">
-    
-    <form action="" >
-      <h2>Registrar Empleado</h2>
-      <input type="text" placeholder="CC" required>
-      <input type="text" placeholder="Nombre" required>
-      <input type="text" placeholder="Telefono" required>
-      <select>
-        <option value="0" >Cargo</option>
-        <option value="1" >Mecanico</option>
-        <option value="2">Cajero</option>
-      <input type="text" placeholder="Salario" required>
-      <div class="center">
-        <button>Registrar</button>
-      </div>
-      
-    </form>
-  </div>
+  <section class="form-registroempleado">
+    <h4>Registro de empleados</h4>
+    <input class="input" type="text" name="idEmpleado" id="idEmpleado" placeholder="Ingrese el ID">
+    <input class="input" type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre">
+    <input class="input" type="text" name="telefono" id="telefono" placeholder="Ingrese su Telefono">
+    <select name="cargo" id="cargo" required>
+      <option value="seleccionar">Selecciona un cargo</option>
+      <option value="administrador">Administrador</option>
+      <option value="cajero">Cajero</option>
+      <option value="mecanico">Mecanico</option>
+    </select>
+    <input class="input" type="text" name="salario" id="salario" placeholder="Ingrese el salario">
+    <input class="button" type="submit" value="Registrar Empleado">
+
+  </section>
 </body>
 </html>

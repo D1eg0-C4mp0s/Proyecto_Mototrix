@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-registroempleado {
+    width: 400px;
+    background: #283847;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+}
+
+.form-registroempleado h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.form-registroempleado .input {
+    width: 100%;
+    background-color: rgb(67, 63, 90);
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+
+}   
+
+.form-registroempleado .button{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px;
+    font-size: 16px;
+}
+
+.form-registroempleado .select {
+    margin-top: 16px;
+    line-height: 40px;
+}
