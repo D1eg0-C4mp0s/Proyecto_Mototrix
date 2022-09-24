@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.form-registroempleado {
+.form-registro {
     width: 400px;
     background: #283847;
     padding: 30px;
@@ -15,12 +15,12 @@
     color: white;
 }
 
-.form-registroempleado h4 {
+.form-registro h4 {
     font-size: 22px;
     margin-bottom: 20px;
 }
 
-.form-registroempleado .input {
+.form-registro .input {
     width: 100%;
     background-color: rgb(67, 63, 90);
     padding: 10px;
@@ -32,17 +32,18 @@
 
 }   
 
-.form-registroempleado .button{
+.form-registro .button{
     width: 100%;
     background: #1f53c5;
     border: none;
     padding: 12px;
     color: white;
-    margin: 16px;
     font-size: 16px;
+    margin-block: 16px;
 }
 
-.form-registroempleado .select {
+.form-registro .selector-cargo {
     margin-top: 16px;
     line-height: 40px;
 }
+

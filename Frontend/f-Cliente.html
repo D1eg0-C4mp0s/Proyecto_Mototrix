@@ -4,23 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>formulario cliente</title>
+  <link rel="stylesheet" href="css/EmpleadosStyle.css">
+  <title>Registro cliente</title>
 </head>
 <body>
-  <!--rc: registar cliente-->
-  <div class="rc">
+ <section class="form-registro">
 
-    <form action="">
-      <h2>Registrar Cliente</h2>
-      <input type="text" placeholder="CC" required> <br> <br>
-      <input type="text" placeholder="Nombre" required> <br> <br>
-      <input type="text" placeholder="Telefono" required> <br> <br>
-      <input type="email" placeholder="Email" required> <br> <br>
-      <div class="center">
-        <button>Registrar</button>
-      </div>
-    </form>
+      <h4>Registrar Cliente</h4>
+      <input class="input" type="text" name="idCliente" id="idCliente" placeholder="Documento de Identidad" required> <br> <br>
+      <input class="input" type="text" name="nombres" id="nombres" placeholder="Nombre" required> <br> <br>
+      <input class="input" type="text" name="telefono" id="telefono" placeholder="Telefono" required> <br> <br>
+      <input class="input" type="email" name="email" id="email" placeholder="Email" required> <br> <br>
+      
+    <input class="button" type="submit" value="Registrar Empleado">
     
-  </div>
+  </section>
 </body>
 </html>

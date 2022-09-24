@@ -5,30 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>registar vehiculo</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/EmpleadosStyle.css">
 </head>
 <body>
   <!--rv: registro vehiculo-->
-  <div class="rv">
+  <section class="form-registro">
 
-    <form action="">
-      <h2>Registrar Vehiculo</h2>
-      <input type="text" placeholder="Placa" required>
-      <input type="text" placeholder="Marca" required>
-      <input type="text" placeholder="Modelo" required>
-      <input type="text" placeholder="Referencia" required>
-      <input type="text" placeholder="Kilometraje" required>
-      <input type="text" placeholder="Estado" required>
-<select name="Estado" id="Estado" required>
+      <h4>Registrar Vehiculo</h4>
+      <input class="input" type="text" placeholder="Placa" required>
+      <input class="input" type="text" placeholder="Marca" required>
+      <input class="input" type="text" placeholder="Modelo" required>
+      <input class="input" type="text" placeholder="Referencia" required>
+      <input class="input" type="text" placeholder="Kilometraje" required>
+      <input class="input" type="text" placeholder="Estado" required>
+<select class="selector-cargo" name="Estado" id="Estado" required>
       <option value="seleccionar">Selecciona un estado fisico</option>
       <option value="bueno">Bueno</option>
       <option value="regular">Regular</option>
       <option value="malo">Malo</option>
     </select>
-      <div class="center">
-        <button>Registrar</button>
-      </div>
-    </form>
-  </div>
+        <input class="button" type="submit" value="Registrar Vehículo">
+
 </body>
 </html>
