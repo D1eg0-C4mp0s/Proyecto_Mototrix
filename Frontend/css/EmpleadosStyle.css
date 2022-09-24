@@ -47,3 +47,51 @@
     line-height: 40px;
 }
 
+
+
+table{
+    border-collapse: collapse;
+    width: 50%;
+  }
+
+  
+.form-table {
+
+    background: #283847;
+    padding: 30px;
+    margin: 180px;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+}
+
+.form-table h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-table .input {
+    width: 80%;
+    background-color: rgb(67, 63, 90);
+    padding: 3px;
+    border-radius: 4px;
+    margin-top: 8px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 12px;
+
+}  
+
+.form-table .button{
+    width: 50%;
+    background: #1f53c5;
+    margin-left: 45%;
+    margin-right: 45%;
+    border: none;
+    padding: 12px;
+    color: white;
+    font-size: 16px;
+    margin-block: 16px;
+}
