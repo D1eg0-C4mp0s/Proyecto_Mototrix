@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `TallerMototrix`.`ficha_de_servicio` (
   `idEmpleado` INT NOT NULL,
   `idVehiculo` INT NOT NULL,
   `fecha_servicio` DATETIME NOT NULL,
+  `estado` VARCHAR(45) NOT NULL,
   `costo` DOUBLE NOT NULL,
   PRIMARY KEY (`idficha_servicios`),
   INDEX `Ficha_Cliente_fk_idx` (`idCliente` ASC) VISIBLE,

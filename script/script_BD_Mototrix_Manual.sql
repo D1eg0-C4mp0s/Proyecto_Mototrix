@@ -96,6 +96,7 @@ CREATE TABLE Compra (
   idEmpleado INT NOT NULL,
   idVehiculo INT NOT NULL,
   fecha_servicio DATETIME NOT NULL,
+  estado VARCHAR(45) NOT NULL,
   costo DOUBLE NOT NULL,
   PRIMARY KEY (idficha_servicios),
   CONSTRAINT Ficha_Cliente_fk FOREIGN KEY (idCliente) REFERENCES Cliente (idCliente),
