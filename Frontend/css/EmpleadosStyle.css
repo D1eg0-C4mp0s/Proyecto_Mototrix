@@ -57,7 +57,8 @@ table{
 
   
 .form-table {
-    width: 55%;
+    width:55%;
+    /*width: auto;*/
     background: #283847;
     padding: 4% 6% 4% 6%;
     margin: auto;
@@ -101,4 +102,12 @@ table{
     font-size: 16px;
     margin-block: 16px;
 }
-
+/*propuesta*/
+th, td {
+    width: 25%;
+    text-align: center;
+    vertical-align: auto;
+    border: 1px solid #1f53c5;
+    border-collapse: collapse;
+    padding: 0.3em;
+  }
