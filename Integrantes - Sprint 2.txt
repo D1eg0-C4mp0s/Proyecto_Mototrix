@@ -1,0 +1,9 @@
+Equipo 1 Gestion Mototrix
+
+Estiven --- lider alias "el paisa que no toma guaro :v"
+Diego --- analista alias "el crack"
+Rodis --- analista alias "el que apoya al Junior"
+JuanDa --- analista alias "el que no se queja, esta de acuerdo con todo"
+Laura --- proyect owner alias "la que vive cambiando los requerimientos"
+
+
