@@ -9,11 +9,9 @@
   <link rel="stylesheet" href="css/EmpleadosStyle.css">  
 </head>
 
-
+<form action="/action_page.php">
 <section class="form-registro">
-
   <h4><center>FICHA DE SERVICIOS</center></h4>
-        <form action="/action_page.php">
         <input class="input"  type="date" id="Fecha_revision" name="Fecha_revision" min="DD/MM/AAAA"><br><br>  
         <select class="selector-mecanico" name="mecanico" id="Mecanico" required>
           <option value="mecánico a cargo">Seleccionar mecánico a cargo</option>
@@ -33,11 +31,19 @@
           <option value="Vehículo">Vehículo y</option>
           <option value="Vehículo">Vehículo z</option>
         </select>
-      </form>
-    </div>  
+        <div style="text-align:center;">
+        <select class="selector-estadof" name="Estado de Ficha" id="EstadoF" required>
+          <option value="seleccione">Estado</option>
+          <option value="ingreso">Ingresado</option>
+          <option value="diagnostico">En Diagnostico</option>
+          <option value="espera">En Espera</option>
+          <option value="reparacion">En Reparacion</option>
+          <option value="finalizado">Finalizado</option>
+        </select>
+        </div>
+      </section>
     <div class="form-table">          
       <table style="width:100%">
-        <form action="/action_page.php">
         <tr>
           <th>Elemento a evaluar</th>
           <th>Estado</th>
@@ -51,7 +57,7 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>
         </tr> 
         <tr>
           <td>Luz, stop y señal trasera</td>
@@ -61,8 +67,7 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Espejos</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -70,40 +75,35 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Pito</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
             <option value="estado">Funcional</option>
             <option value="estado">No funcional</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Tacómetro (indicador rpm)</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
             <option value="estado">Funcional</option>
             <option value="estado">No funcional</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>velocímetro</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
             <option value="estado">Funcional</option>
             <option value="estado">No funcional</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Frenos delantero y trasero</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
             <option value="estado">Funcional</option>
             <option value="estado">No funcional</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Llantas</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -111,8 +111,7 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Rines delantero y trasero</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -120,8 +119,7 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Guarda barros (delantero y trasero)</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -129,16 +127,14 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Amortiguadores</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
             <option value="estado">Funcional</option>
             <option value="estado">No funcional</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Sillín</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -146,8 +142,7 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Motor</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -155,8 +150,7 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Tanque de gasolina</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -164,8 +158,7 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Instalación eléctrica</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -173,8 +166,7 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Chasis</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -182,8 +174,7 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Moto en general</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -191,16 +182,14 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Elementos de protección (casco y chaleco)</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
             <option value="estado">Presentes</option>
             <option value="estado">No presentes</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Maletero</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
@@ -208,32 +197,28 @@
             <option value="estado">Regular</option>
             <option value="estado">Malo</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>SOAT</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
             <option value="estado">Vigente</option>
             <option value="estado">No vigente</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Tarjeta de propiedad</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
             <option value="estado">Presente</option>
             <option value="estado">No presente</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>        <tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>        <tr>
           <td>Certificado de emisión vehicular</td>
           <td><select name="estado">
             <option value="estado">Seleccione</option>
             <option value="estado">Vigente</option>
             <option value="estado">No vigente</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td>
-        </tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>        </tr>
         <tr>
           <td>Licencia de conducir vigente</td>
           <td><select name="estado">
@@ -241,15 +226,12 @@
             <option value="estado">Presente</option>
             <option value="estado">No presente</option>
           </select></td>
-          <td><input class="input" type="text" id="des1" name="des1" ></td> 
-        </tr>
+          <td><textarea class="input" id="comment" name="obsevacion" cols="45" rows="8" maxlength="10000" required="" style="width: 200px; height: 70px;"></textarea></td>
+          </tr>
         </table>
         <input class="button" type="submit" value="Registrar">
         <input class="button" type="reset" value="Limpiar"/>
-      </form>
-  </div>                    
-
-  </section>
-
+      </div> 
+      </form>                   
 </body>
 </html>
