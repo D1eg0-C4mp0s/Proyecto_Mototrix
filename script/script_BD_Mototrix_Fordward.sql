@@ -5,261 +5,185 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema TallerMototrix
+-- Schema tallermototrix
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema TallerMototrix
+-- Schema tallermototrix
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `TallerMototrix` DEFAULT CHARACTER SET utf8 ;
-USE `TallerMototrix` ;
+CREATE SCHEMA IF NOT EXISTS `tallermototrix` DEFAULT CHARACTER SET utf8 ;
+USE `tallermototrix` ;
 
 -- -----------------------------------------------------
--- Table `TallerMototrix`.`Cliente`
+-- Table `tallermototrix`.`cliente`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Cliente` (
-  `idCliente` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `tallermototrix`.`cliente` (
+  `idcliente` INT NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
   `correo` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idCliente`))
+  PRIMARY KEY (`idcliente`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `TallerMototrix`.`Vehiculos`
+-- Table `tallermototrix`.`vehiculos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Vehiculos` (
-  `idVehiculos` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `tallermototrix`.`vehiculos` (
+  `idvehiculos` INT NOT NULL,
+  `placa` VARCHAR(45) NOT NULL,
   `marca` VARCHAR(45) NOT NULL,
   `referencia` VARCHAR(45) NOT NULL,
   `modelo` INT NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
   `kilometros_rec` INT NOT NULL,
-  PRIMARY KEY (`idVehiculos`))
+  `idcliente` INT NOT NULL,
+  PRIMARY KEY (`idvehiculos`),
+  INDEX `Vehiculo_Cliente_fk_idx` (`idcliente` ASC) VISIBLE,
+  CONSTRAINT `Vehiculo_Cliente_fk`
+    FOREIGN KEY (`idcliente`)
+    REFERENCES `tallermototrix`.`cliente` (`idcliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `TallerMototrix`.`Servicios`
+-- Table `tallermototrix`.`proveedor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Servicios` (
-  `idServicios` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `tallermototrix`.`proveedor` (
+  `idproveedor` INT NOT NULL,
+  `nombre` VARCHAR(45) NOT NULL,
+  `correo` VARCHAR(45) NOT NULL,
+  `telefono` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idproveedor`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `tallermototrix`.`refacciones`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tallermototrix`.`refacciones` (
+  `idrefacciones` INT NOT NULL,
+  `nombre` VARCHAR(45) NOT NULL,
+  `cantidad` INT NOT NULL,
+  `precio_c` DOUBLE NOT NULL,
+  `precio_v` DOUBLE NOT NULL,
+  `idproveedor` INT NOT NULL,
+  PRIMARY KEY (`idrefacciones`),
+  INDEX `Refaccion_Provedor_fk_idx` (`idproveedor` ASC) VISIBLE,
+  CONSTRAINT `Refaccion_Provedor_fk`
+    FOREIGN KEY (`idproveedor`)
+    REFERENCES `tallermototrix`.`proveedor` (`idproveedor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `tallermototrix`.`insumos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tallermototrix`.`insumos` (
+  `idinsumos` INT NOT NULL,
+  `nombre` VARCHAR(45) NOT NULL,
+  `cantidad` INT NOT NULL,
+  `precio_c` DOUBLE NOT NULL,
+  `precio_v` DOUBLE NOT NULL,
+  PRIMARY KEY (`idinsumos`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `tallermototrix`.`servicios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tallermototrix`.`servicios` (
+  `idservicios` INT NOT NULL,
   `nombre_serv` VARCHAR(45) NOT NULL,
   `precio` DOUBLE NOT NULL,
   `tiene_insumos` TINYINT NOT NULL,
   `tiene_refacciones` TINYINT NOT NULL,
-  PRIMARY KEY (`idServicios`))
+  `idrefacciones` INT NOT NULL,
+  `idinsumos` INT NOT NULL,
+  PRIMARY KEY (`idservicios`),
+  INDEX `Servicio_Refaccion_fk_idx` (`idrefacciones` ASC) VISIBLE,
+  INDEX `Servicio_Insumo_fk_idx` (`idinsumos` ASC) VISIBLE,
+  CONSTRAINT `Servicio_Refaccion_fk`
+    FOREIGN KEY (`idrefacciones`)
+    REFERENCES `tallermototrix`.`refacciones` (`idrefacciones`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `Servicio_Insumo_fk`
+    FOREIGN KEY (`idinsumos`)
+    REFERENCES `tallermototrix`.`insumos` (`idinsumos`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `TallerMototrix`.`Proveedor`
+-- Table `tallermototrix`.`empleado`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Proveedor` (
-  `idProveedor` INT NOT NULL,
-  `nombre` VARCHAR(45) NOT NULL,
-  `correo` VARCHAR(45) NOT NULL,
-  `telefono` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idProveedor`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `TallerMototrix`.`Refacciones`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Refacciones` (
-  `idRefacciones` INT NOT NULL,
-  `nombre` VARCHAR(45) NOT NULL,
-  `cantidad` INT NOT NULL,
-  `precio_c` DOUBLE NOT NULL,
-  `precio_v` DOUBLE NOT NULL,
-  PRIMARY KEY (`idRefacciones`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `TallerMototrix`.`Empleado`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Empleado` (
-  `idEmpleado` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `tallermototrix`.`empleado` (
+  `idempleado` INT NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
   `tipo` VARCHAR(45) NOT NULL,
   `salario` DOUBLE NOT NULL,
-  PRIMARY KEY (`idEmpleado`))
+  PRIMARY KEY (`idempleado`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `TallerMototrix`.`ficha_de_servicio`
+-- Table `tallermototrix`.`ficha_de_servicio`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`ficha_de_servicio` (
+CREATE TABLE IF NOT EXISTS `tallermototrix`.`ficha_de_servicio` (
   `idficha_servicios` INT NOT NULL AUTO_INCREMENT,
-  `idCliente` INT NOT NULL,
-  `idEmpleado` INT NOT NULL,
-  `idVehiculo` INT NOT NULL,
+  `idcliente` INT NOT NULL,
+  `idempleado` INT NOT NULL,
+  `idvehiculo` INT NOT NULL,
   `fecha_servicio` DATETIME NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
   `costo` DOUBLE NOT NULL,
   PRIMARY KEY (`idficha_servicios`),
-  INDEX `Ficha_Cliente_fk_idx` (`idCliente` ASC) VISIBLE,
-  INDEX `Ficha_Empleado_fk_idx` (`idEmpleado` ASC) VISIBLE,
-  INDEX `Ficha_Vehiculo_fk_idx` (`idVehiculo` ASC) VISIBLE,
+  INDEX `Ficha_Cliente_fk_idx` (`idcliente` ASC) VISIBLE,
+  INDEX `Ficha_Empleado_fk_idx` (`idempleado` ASC) VISIBLE,
+  INDEX `Ficha_Vehiculo_fk_idx` (`idvehiculo` ASC) VISIBLE,
   CONSTRAINT `Ficha_Cliente_fk`
-    FOREIGN KEY (`idCliente`)
-    REFERENCES `TallerMototrix`.`Cliente` (`idCliente`)
+    FOREIGN KEY (`idcliente`)
+    REFERENCES `tallermototrix`.`cliente` (`idcliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `Ficha_Empleado_fk`
-    FOREIGN KEY (`idEmpleado`)
-    REFERENCES `TallerMototrix`.`Empleado` (`idEmpleado`)
+    FOREIGN KEY (`idempleado`)
+    REFERENCES `tallermototrix`.`empleado` (`idempleado`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `Ficha_Vehiculo_fk`
-    FOREIGN KEY (`idVehiculo`)
-    REFERENCES `TallerMototrix`.`Vehiculos` (`idVehiculos`)
+    FOREIGN KEY (`idvehiculo`)
+    REFERENCES `tallermototrix`.`vehiculos` (`idvehiculos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `TallerMototrix`.`Vinculo_Servicio`
+-- Table `tallermototrix`.`vinculo_servicio`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Vinculo_Servicio` (
-  `idFicha_Servicios` INT NOT NULL,
-  `idServicios` INT NOT NULL,
-  PRIMARY KEY (`idFicha_Servicios`),
-  INDEX `VinculoS_Servicio_fk_idx` (`idServicios` ASC) VISIBLE,
-  UNIQUE INDEX `idFicha_Servicios_UNIQUE` (`idFicha_Servicios` ASC) VISIBLE,
-  UNIQUE INDEX `idServicios_UNIQUE` (`idServicios` ASC) VISIBLE,
+CREATE TABLE IF NOT EXISTS `tallermototrix`.`vinculo_servicio` (
+  `idficha_servicios` INT NOT NULL,
+  `idservicios` INT NOT NULL,
+  PRIMARY KEY (`idficha_servicios`),
+  INDEX `VinculoS_Servicio_fk_idx` (`idservicios` ASC) VISIBLE,
+  UNIQUE INDEX `idFicha_Servicios_UNIQUE` (`idficha_servicios` ASC) VISIBLE,
+  UNIQUE INDEX `idServicios_UNIQUE` (`idservicios` ASC) VISIBLE,
   CONSTRAINT `VinculoS_Ficha_fk`
-    FOREIGN KEY (`idFicha_Servicios`)
-    REFERENCES `TallerMototrix`.`ficha_de_servicio` (`idficha_servicios`)
+    FOREIGN KEY (`idficha_servicios`)
+    REFERENCES `tallermototrix`.`ficha_de_servicio` (`idficha_servicios`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `VinculoS_Servicio_fk`
-    FOREIGN KEY (`idServicios`)
-    REFERENCES `TallerMototrix`.`Servicios` (`idServicios`)
+    FOREIGN KEY (`idservicios`)
+    REFERENCES `tallermototrix`.`servicios` (`idservicios`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `TallerMototrix`.`Vinculo_Refaccion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Vinculo_Refaccion` (
-  `idServicio` INT NOT NULL,
-  `idRefaccion` INT NOT NULL,
-  PRIMARY KEY (`idServicio`),
-  INDEX `VinculoR_Refaccion_fk_idx` (`idRefaccion` ASC) VISIBLE,
-  CONSTRAINT `VinculoR_Servicio_fk`
-    FOREIGN KEY (`idServicio`)
-    REFERENCES `TallerMototrix`.`Servicios` (`idServicios`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `VinculoR_Refaccion_fk`
-    FOREIGN KEY (`idRefaccion`)
-    REFERENCES `TallerMototrix`.`Refacciones` (`idRefacciones`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `TallerMototrix`.`Compra`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Compra` (
-  `idCompra` INT NOT NULL,
-  `idProveedor` INT NOT NULL,
-  PRIMARY KEY (`idCompra`),
-  INDEX `Compra_Proveedor_fk_idx` (`idProveedor` ASC) VISIBLE,
-  CONSTRAINT `Compra_Proveedor_fk`
-    FOREIGN KEY (`idProveedor`)
-    REFERENCES `TallerMototrix`.`Proveedor` (`idProveedor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `TallerMototrix`.`Vinculo_Compra`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Vinculo_Compra` (
-  `idCompra` INT NOT NULL,
-  `idRefaccion` INT NOT NULL,
-  PRIMARY KEY (`idCompra`),
-  INDEX `VinculoC_Refaccion_fk_idx` (`idRefaccion` ASC) VISIBLE,
-  CONSTRAINT `VinculoC_Compra_fk`
-    FOREIGN KEY (`idCompra`)
-    REFERENCES `TallerMototrix`.`Compra` (`idCompra`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `VinculoC_Refaccion_fk`
-    FOREIGN KEY (`idRefaccion`)
-    REFERENCES `TallerMototrix`.`Refacciones` (`idRefacciones`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `TallerMototrix`.`Insumos`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Insumos` (
-  `idInsumos` INT NOT NULL,
-  `nombre` VARCHAR(45) NOT NULL,
-  `cantidad` INT NOT NULL,
-  `precio_c` DOUBLE NOT NULL,
-  `precio_v` DOUBLE NOT NULL,
-  PRIMARY KEY (`idInsumos`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `TallerMototrix`.`Vinculo_Insumo`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Vinculo_Insumo` (
-  `idServicio` INT NOT NULL,
-  `idInsumo` INT NOT NULL,
-  PRIMARY KEY (`idServicio`),
-  INDEX `VinculoI_Insumos_fk_idx` (`idInsumo` ASC) VISIBLE,
-  CONSTRAINT `VinculoI_Servicios_fk`
-    FOREIGN KEY (`idServicio`)
-    REFERENCES `TallerMototrix`.`Servicios` (`idServicios`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `VinculoI_Insumos_fk`
-    FOREIGN KEY (`idInsumo`)
-    REFERENCES `TallerMototrix`.`Insumos` (`idInsumos`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `TallerMototrix`.`Vinculo_Cliente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TallerMototrix`.`Vinculo_Cliente` (
-  `idCliente` INT NOT NULL,
-  `idVehiculo` INT NOT NULL,
-  PRIMARY KEY (`idCliente`),
-  INDEX `VinculoC_Vehiculo_fk_idx` (`idVehiculo` ASC) VISIBLE,
-  CONSTRAINT `VinculoC_Cliente_fk`
-    FOREIGN KEY (`idCliente`)
-    REFERENCES `TallerMototrix`.`Cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `VinculoC_Vehiculo_fk`
-    FOREIGN KEY (`idVehiculo`)
-    REFERENCES `TallerMototrix`.`Vehiculos` (`idVehiculos`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
