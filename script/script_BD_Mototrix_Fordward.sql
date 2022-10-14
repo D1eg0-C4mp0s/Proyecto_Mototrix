@@ -125,6 +125,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tallermototrix`.`empleado` (
   `idempleado` INT NOT NULL,
+  `contraseña` VARCHAR(45) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
   `tipo` VARCHAR(45) NOT NULL,
