@@ -7,4 +7,4 @@ insert into proveedor values(5000,"Mapana","Mapana@hotmail.com","315487558");
 insert into refacciones values(050601,"herradura","12",50000.0,62000.0,5000);
 insert into insumos values(9930,"Aceite 500ml",10,5000.0,7800.0);
 insert into servicios values(75,"Cambio de aceite",300000.0,true,false,0,9930);
-insert into ficha_de_servicio values(23851,1000,1111,2222,2007-23-08,"Bueno",307800.0);
+insert into ficha_de_servicio values(23851,1000,1111,2222,'2007-08-23 15:40:10',"Bueno",307800.0);
