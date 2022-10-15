@@ -1,0 +1,1 @@
+insert into proveedor values(5000,"Mapana","Mapana@hotmail.com","315487558");
