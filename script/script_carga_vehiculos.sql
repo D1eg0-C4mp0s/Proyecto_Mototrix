@@ -1,0 +1,10 @@
+insert into vehiculos values(2220,"673-ASF","Susuki","Nx100",2006,"Bueno",89200,1000);
+insert into vehiculos values(2221,"123-XSF","Honda","Kairos",2018,"Bueno",41500,1001);
+insert into vehiculos values(2222,"976-TGB","AKT","NKD 125",2021,"Bueno",5500,1002);
+insert into vehiculos values(2223,"303-OCM","Auteco","TVS RAIDER 125",2020,"Bueno",85500,1003);
+insert into vehiculos values(2224,"276-IPF","Benelli","180S",2017,"Bueno",19004,1004);
+insert into vehiculos values(2225,"209-HGM","BMW","R 18",2010,"Bueno",62400,1005);
+insert into vehiculos values(2226,"311-WSR","Pulsar","NS 125",2020,"Bueno",26500,1000);
+insert into vehiculos values(2227,"152-DDZ","Yamaha","MOTO3",2019,"Bueno",45900,1003);
+insert into vehiculos values(2228,"435-CGO","Honda","PCX 150",2021,"Bueno",24500,106);
+insert into vehiculos values(2229,"300-LPR","Auteco","MAX 125",2020,"Bueno",92500,1003);
