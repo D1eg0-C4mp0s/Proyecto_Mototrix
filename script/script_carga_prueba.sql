@@ -3,3 +3,8 @@ insert into empleado values(1111,"contraseniaGenerica","Mario Castaño","xxx000"
 insert into vehiculos values(2222,"XSF-123","Honda","Kairos",2018,"Bueno",2500,1000);
 insert into cliente values(1001,"Oscar Ospina","xxx002","example1@example.com");
 insert into vehiculos values(2223,"ASF-673","Susuki","Nx100",2006,"Bueno",200,1000);
+insert into proveedor values(5000,"Mapana","Mapana@hotmail.com","315487558");
+insert into refacciones values(050601,"herradura","12",50000.0,62000.0,5000);
+insert into insumos values(9930,"Aceite 500ml",10,5000.0,7800.0);
+insert into servicios values(75,"Cambio de aceite",300000.0,true,false,0,9930);
+insert into ficha_de_servicio values(23851,1000,1111,2222,2007-23-08,"Bueno",307800.0);
