@@ -173,7 +173,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tallermototrix`.`vinculo_servicio` (
   `idficha_servicios` INT NOT NULL,
   `idservicios` INT NOT NULL,
-  PRIMARY KEY (`idficha_servicios`),
+  PRIMARY KEY (`idficha_servicios`, `idservicios`),
   INDEX `VinculoS_Servicio_fk_idx` (`idservicios` ASC) VISIBLE,
   UNIQUE INDEX `idFicha_Servicios_UNIQUE` (`idficha_servicios` ASC) VISIBLE,
   UNIQUE INDEX `idServicios_UNIQUE` (`idservicios` ASC) VISIBLE,
