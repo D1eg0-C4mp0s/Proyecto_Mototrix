@@ -30,7 +30,7 @@ ENGINE = InnoDB;
 -- Table `tallermototrix`.`vehiculos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tallermototrix`.`vehiculos` (
-  `idvehiculos` INT NOT NULL,
+  `idvehiculos` INT NOT NULL AUTO_INCREMENT,
   `placa` VARCHAR(45) NOT NULL,
   `marca` VARCHAR(45) NOT NULL,
   `referencia` VARCHAR(45) NOT NULL,
@@ -52,7 +52,7 @@ ENGINE = InnoDB;
 -- Table `tallermototrix`.`proveedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tallermototrix`.`proveedor` (
-  `idproveedor` INT NOT NULL,
+  `idproveedor` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `correo` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
@@ -64,7 +64,7 @@ ENGINE = InnoDB;
 -- Table `tallermototrix`.`refacciones`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tallermototrix`.`refacciones` (
-  `idrefacciones` INT NOT NULL,
+  `idrefacciones` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `cantidad` INT NOT NULL,
   `precio_c` DOUBLE NOT NULL,
@@ -84,7 +84,7 @@ ENGINE = InnoDB;
 -- Table `tallermototrix`.`insumos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tallermototrix`.`insumos` (
-  `idinsumos` INT NOT NULL,
+  `idinsumos` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `cantidad` INT NOT NULL,
   `precio_c` DOUBLE NOT NULL,
@@ -97,7 +97,7 @@ ENGINE = InnoDB;
 -- Table `tallermototrix`.`servicios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tallermototrix`.`servicios` (
-  `idservicios` INT NOT NULL,
+  `idservicios` INT NOT NULL AUTO_INCREMENT,
   `nombre_serv` VARCHAR(45) NOT NULL,
   `precio` DOUBLE NOT NULL,
   `tiene_insumos` TINYINT NOT NULL,
