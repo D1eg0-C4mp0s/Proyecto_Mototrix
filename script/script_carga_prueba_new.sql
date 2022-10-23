@@ -6,10 +6,10 @@ insert into cliente values(1004,"Carla Mendez","xxx005","Carla@example.com");
 insert into cliente values(1005,"Erik Quemado","xxx006","Erik@example.com");
 insert into cliente values(1006,"Juliana Escorcia","xxx007","Juliana@example.com");
 
-insert into empleado values(1,"contraseniaGenerica","Mario Castaño","xxx000","Mecanico",1500000.0);
-insert into empleado values(2,"contraseniaGenerica","Carlos Puebla","xxx22","Mecanico",0.0);
-insert into empleado values(3,"contraseniaGenerica","Maria Cruz","xxx333","cajero",0.0);
-insert into empleado values(4,"contraseniaGenerica","Stiven Montes","xxx444","Mecanico",0.0);
+insert into empleado values(10,"contraseniaGenerica","Mario Castaño","xxx000","Mecanico",1500000.0);
+insert into empleado values(11,"contraseniaGenerica","Carlos Puebla","xxx22","Mecanico",0.0);
+insert into empleado values(12,"contraseniaGenerica","Maria Cruz","xxx333","cajero",0.0);
+insert into empleado values(13,"contraseniaGenerica","Stiven Montes","xxx444","Mecanico",0.0);
 
 insert into proveedor values(5000,"Mapana","Mapana@hotmail.com","315487558");
 insert into proveedor values(5001,"YAMAHA","yamaha@repuestos.com","658941");
@@ -71,8 +71,8 @@ insert into insumos values(9008,"Líquido Para Frenos Dot 3",10,12600.0,14000.0)
 insert into insumos values(9009,"Silicona Protectora Simoniz Filtro 300ml",4,14900.0,16000.0);
 insert into insumos values(9000,"Gasolina 1L",50,2478.0,2600.0);
 
-insert into ficha_de_servicio values(20000,1000,1111,2222,'2007/08/23 14:40:10',"Bueno",60000.0);
-insert into ficha_de_servicio values(20001,1003,1111,2227,'2007/10/05 09:15:10',"Regular",200000.0);
+insert into ficha_de_servicio values(20000,1000,1111,2222,'2007/08/23 14:40:10',"En Diagnostico",60000.0);
+insert into ficha_de_servicio values(20001,1003,1111,2227,'2007/10/05 09:15:10',"En Reparacion",200000.0);
 
 insert into vinculo_servicio values(20000,77);
 insert into vinculo_servicio values(20001,76);
